@@ -13,15 +13,12 @@ class SuffixTree {
   bool search(const string) const;
   SuffixTree operator=(SuffixTree&);
   void display(ostream&);
-  friend ostream& operator<<(ostream& out, SuffixTree& s);
+    void rebuild(string item);
 private:
     void quicksort(string arr[], int low, int high);
     string* myArray;
-    int mySize;
+    int myCapacity;
 };
 
-ostream& operator<<(ostream& out, SuffixTree& s){
-    s.display(out);
-    return out;
-}
+ostream& operator<<(ostream& out, SuffixTree& s);
 #endif

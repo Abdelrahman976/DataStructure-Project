@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/liona/Documents/Data Structures Project
+# Install script for directory: D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/liona/Documents/Data Structures Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

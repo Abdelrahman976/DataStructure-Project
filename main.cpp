@@ -3,7 +3,10 @@
 using namespace std;
 
 int main() {
-    SuffixTree test("abcabxabcd");
-    test.display(cout);
+    cout<<"Enter Your Word:";
+    string word;
+    cin>>word;
+    SuffixTree test(word);
+    cout<<test<<endl;
     return 0;
 }
