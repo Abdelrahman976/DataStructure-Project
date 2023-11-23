@@ -96,69 +96,21 @@ CMakeFiles/texteditor1.dir/SuffixTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/texteditor1.dir/SuffixTree.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\liona\Documents\Data Structures Project\SuffixTree.cpp" -o CMakeFiles\texteditor1.dir\SuffixTree.cpp.s
 
-CMakeFiles/texteditor1.dir/Suffix.cpp.obj: CMakeFiles/texteditor1.dir/flags.make
-CMakeFiles/texteditor1.dir/Suffix.cpp.obj: C:/Users/liona/Documents/Data\ Structures\ Project/Suffix.cpp
-CMakeFiles/texteditor1.dir/Suffix.cpp.obj: CMakeFiles/texteditor1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\liona\Documents\Data Structures Project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/texteditor1.dir/Suffix.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/texteditor1.dir/Suffix.cpp.obj -MF CMakeFiles\texteditor1.dir\Suffix.cpp.obj.d -o CMakeFiles\texteditor1.dir\Suffix.cpp.obj -c "C:\Users\liona\Documents\Data Structures Project\Suffix.cpp"
-
-CMakeFiles/texteditor1.dir/Suffix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/texteditor1.dir/Suffix.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\liona\Documents\Data Structures Project\Suffix.cpp" > CMakeFiles\texteditor1.dir\Suffix.cpp.i
-
-CMakeFiles/texteditor1.dir/Suffix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/texteditor1.dir/Suffix.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\liona\Documents\Data Structures Project\Suffix.cpp" -o CMakeFiles\texteditor1.dir\Suffix.cpp.s
-
-CMakeFiles/texteditor1.dir/Node.cpp.obj: CMakeFiles/texteditor1.dir/flags.make
-CMakeFiles/texteditor1.dir/Node.cpp.obj: C:/Users/liona/Documents/Data\ Structures\ Project/Node.cpp
-CMakeFiles/texteditor1.dir/Node.cpp.obj: CMakeFiles/texteditor1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\liona\Documents\Data Structures Project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/texteditor1.dir/Node.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/texteditor1.dir/Node.cpp.obj -MF CMakeFiles\texteditor1.dir\Node.cpp.obj.d -o CMakeFiles\texteditor1.dir\Node.cpp.obj -c "C:\Users\liona\Documents\Data Structures Project\Node.cpp"
-
-CMakeFiles/texteditor1.dir/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/texteditor1.dir/Node.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\liona\Documents\Data Structures Project\Node.cpp" > CMakeFiles\texteditor1.dir\Node.cpp.i
-
-CMakeFiles/texteditor1.dir/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/texteditor1.dir/Node.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\liona\Documents\Data Structures Project\Node.cpp" -o CMakeFiles\texteditor1.dir\Node.cpp.s
-
-CMakeFiles/texteditor1.dir/textEditor.cpp.obj: CMakeFiles/texteditor1.dir/flags.make
-CMakeFiles/texteditor1.dir/textEditor.cpp.obj: C:/Users/liona/Documents/Data\ Structures\ Project/textEditor.cpp
-CMakeFiles/texteditor1.dir/textEditor.cpp.obj: CMakeFiles/texteditor1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\liona\Documents\Data Structures Project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/texteditor1.dir/textEditor.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/texteditor1.dir/textEditor.cpp.obj -MF CMakeFiles\texteditor1.dir\textEditor.cpp.obj.d -o CMakeFiles\texteditor1.dir\textEditor.cpp.obj -c "C:\Users\liona\Documents\Data Structures Project\textEditor.cpp"
-
-CMakeFiles/texteditor1.dir/textEditor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/texteditor1.dir/textEditor.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\liona\Documents\Data Structures Project\textEditor.cpp" > CMakeFiles\texteditor1.dir\textEditor.cpp.i
-
-CMakeFiles/texteditor1.dir/textEditor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/texteditor1.dir/textEditor.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\liona\Documents\Data Structures Project\textEditor.cpp" -o CMakeFiles\texteditor1.dir\textEditor.cpp.s
-
 # Object files for target texteditor1
 texteditor1_OBJECTS = \
 "CMakeFiles/texteditor1.dir/main.cpp.obj" \
-"CMakeFiles/texteditor1.dir/SuffixTree.cpp.obj" \
-"CMakeFiles/texteditor1.dir/Suffix.cpp.obj" \
-"CMakeFiles/texteditor1.dir/Node.cpp.obj" \
-"CMakeFiles/texteditor1.dir/textEditor.cpp.obj"
+"CMakeFiles/texteditor1.dir/SuffixTree.cpp.obj"
 
 # External object files for target texteditor1
 texteditor1_EXTERNAL_OBJECTS =
 
 texteditor1.exe: CMakeFiles/texteditor1.dir/main.cpp.obj
 texteditor1.exe: CMakeFiles/texteditor1.dir/SuffixTree.cpp.obj
-texteditor1.exe: CMakeFiles/texteditor1.dir/Suffix.cpp.obj
-texteditor1.exe: CMakeFiles/texteditor1.dir/Node.cpp.obj
-texteditor1.exe: CMakeFiles/texteditor1.dir/textEditor.cpp.obj
 texteditor1.exe: CMakeFiles/texteditor1.dir/build.make
 texteditor1.exe: CMakeFiles/texteditor1.dir/linkLibs.rsp
 texteditor1.exe: CMakeFiles/texteditor1.dir/objects1.rsp
 texteditor1.exe: CMakeFiles/texteditor1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\liona\Documents\Data Structures Project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable texteditor1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\liona\Documents\Data Structures Project\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable texteditor1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\texteditor1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

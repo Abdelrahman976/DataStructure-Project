@@ -128,54 +128,6 @@ texteditor1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/build
 .PHONY : texteditor1/fast
 
-Node.obj: Node.cpp.obj
-.PHONY : Node.obj
-
-# target to build an object file
-Node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Node.cpp.obj
-.PHONY : Node.cpp.obj
-
-Node.i: Node.cpp.i
-.PHONY : Node.i
-
-# target to preprocess a source file
-Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Node.cpp.i
-.PHONY : Node.cpp.i
-
-Node.s: Node.cpp.s
-.PHONY : Node.s
-
-# target to generate assembly for a file
-Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Node.cpp.s
-.PHONY : Node.cpp.s
-
-Suffix.obj: Suffix.cpp.obj
-.PHONY : Suffix.obj
-
-# target to build an object file
-Suffix.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Suffix.cpp.obj
-.PHONY : Suffix.cpp.obj
-
-Suffix.i: Suffix.cpp.i
-.PHONY : Suffix.i
-
-# target to preprocess a source file
-Suffix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Suffix.cpp.i
-.PHONY : Suffix.cpp.i
-
-Suffix.s: Suffix.cpp.s
-.PHONY : Suffix.s
-
-# target to generate assembly for a file
-Suffix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/Suffix.cpp.s
-.PHONY : Suffix.cpp.s
-
 SuffixTree.obj: SuffixTree.cpp.obj
 .PHONY : SuffixTree.obj
 
@@ -224,30 +176,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-textEditor.obj: textEditor.cpp.obj
-.PHONY : textEditor.obj
-
-# target to build an object file
-textEditor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/textEditor.cpp.obj
-.PHONY : textEditor.cpp.obj
-
-textEditor.i: textEditor.cpp.i
-.PHONY : textEditor.i
-
-# target to preprocess a source file
-textEditor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/textEditor.cpp.i
-.PHONY : textEditor.cpp.i
-
-textEditor.s: textEditor.cpp.s
-.PHONY : textEditor.s
-
-# target to generate assembly for a file
-textEditor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/textEditor.cpp.s
-.PHONY : textEditor.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -257,21 +185,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... texteditor1
-	@echo ... Node.obj
-	@echo ... Node.i
-	@echo ... Node.s
-	@echo ... Suffix.obj
-	@echo ... Suffix.i
-	@echo ... Suffix.s
 	@echo ... SuffixTree.obj
 	@echo ... SuffixTree.i
 	@echo ... SuffixTree.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... textEditor.obj
-	@echo ... textEditor.i
-	@echo ... textEditor.s
 .PHONY : help
 
 

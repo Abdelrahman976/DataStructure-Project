@@ -82,18 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/Node.cpp">
-			<Option target="texteditor1"/>
-		</Unit>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/Node.h">
-			<Option target="texteditor1"/>
-		</Unit>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/Suffix.cpp">
-			<Option target="texteditor1"/>
-		</Unit>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/Suffix.h">
-			<Option target="texteditor1"/>
-		</Unit>
 		<Unit filename="C:/Users/liona/Documents/Data Structures Project/SuffixTree.cpp">
 			<Option target="texteditor1"/>
 		</Unit>
@@ -101,12 +89,6 @@
 			<Option target="texteditor1"/>
 		</Unit>
 		<Unit filename="C:/Users/liona/Documents/Data Structures Project/main.cpp">
-			<Option target="texteditor1"/>
-		</Unit>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/textEditor.cpp">
-			<Option target="texteditor1"/>
-		</Unit>
-		<Unit filename="C:/Users/liona/Documents/Data Structures Project/textEditor.h">
 			<Option target="texteditor1"/>
 		</Unit>
 		<Unit filename="C:/Users/liona/Documents/Data Structures Project/CMakeLists.txt">
