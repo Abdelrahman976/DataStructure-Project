@@ -144,7 +144,7 @@ void TextEditor::menu(){
                 if(search != "<-Back" && search != "<-back") {
                     bool found = find(search);
                     if (found) {
-                        cout << "Text found: " << endl;
+                        cout << "Text found. " << endl;
                     } else {
                         cout << "Text not found." << endl;
                     }

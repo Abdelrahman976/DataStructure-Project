@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code/cmake-build-debug",
-		"source" : "D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code"
+		"build" : "D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug",
+		"source" : "D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project"
 	},
 	"version" : 
 	{

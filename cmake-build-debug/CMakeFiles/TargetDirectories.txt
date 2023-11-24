@@ -1,3 +1,3 @@
-D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code/cmake-build-debug/CMakeFiles/texteditor1.dir
-D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug/CMakeFiles/texteditor1.dir
+D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
