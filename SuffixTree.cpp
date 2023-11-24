@@ -3,6 +3,11 @@
 #include "SuffixTree.h"
 using namespace std;
 
+SuffixTree::SuffixTree():myCapacity(0){
+    myArray = new string[myCapacity];
+    construct("");
+}
+
 SuffixTree::SuffixTree(string str):myCapacity(str.length()){
     myArray = new string[myCapacity];
     construct(str );

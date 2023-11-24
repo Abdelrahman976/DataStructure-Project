@@ -1,12 +1,8 @@
-#include <iostream>
 #include "SuffixTree.h"
+#include "TextEditor.h"
 using namespace std;
 
 int main() {
-    cout<<"Enter Your Word:";
-    string word;
-    cin>>word;
-    SuffixTree test(word);
-    cout<<test<<endl;
-    return 0;
+    TextEditor editor;
+    editor.menu();
 }

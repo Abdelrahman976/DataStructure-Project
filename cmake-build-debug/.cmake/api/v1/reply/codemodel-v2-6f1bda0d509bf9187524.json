@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "texteditor1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-texteditor1-Debug-930975525e47034ecfdf.json",
+					"jsonFile" : "target-texteditor1-Debug-402a8b8897d5d6203c44.json",
 					"name" : "texteditor1",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project/cmake-build-debug",
-		"source" : "D:/Semester 5/Data Structure & Algorithms/C++ Projects/DataStructure-Project"
+		"build" : "D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code/cmake-build-debug",
+		"source" : "D:/Maeen/UNI Documents/OneDrive - Faculty of Engineering Ain Shams University/Junior/Fall 2023/Data Structures and Algorithms/Project/Code"
 	},
 	"version" : 
 	{
