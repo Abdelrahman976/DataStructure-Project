@@ -17,11 +17,10 @@ private:
     string currentText;
     string clipboard;
     string previousText;
-    SuffixTree myTree;
     void saveState();
     void insert(const string& str);
     void deleteSubstring(int start, int length);
-    bool find(const string& search);
+    bool find(const string& search, int&);
     void undo();
     void redo();
     void copy(int start, int length);

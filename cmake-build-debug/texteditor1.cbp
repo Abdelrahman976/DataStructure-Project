@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/liona/Documents/Data Structures Project/SuffixTree.h">
 			<Option target="texteditor1"/>
 		</Unit>
+		<Unit filename="C:/Users/liona/Documents/Data Structures Project/TextEditor.cpp">
+			<Option target="texteditor1"/>
+		</Unit>
+		<Unit filename="C:/Users/liona/Documents/Data Structures Project/TextEditor.h">
+			<Option target="texteditor1"/>
+		</Unit>
 		<Unit filename="C:/Users/liona/Documents/Data Structures Project/main.cpp">
 			<Option target="texteditor1"/>
 		</Unit>

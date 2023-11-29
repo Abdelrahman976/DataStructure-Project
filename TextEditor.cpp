@@ -23,9 +23,9 @@ void TextEditor::deleteSubstring(int start, int length) {
     currentText = text;
 }
 
-bool TextEditor::find(const string& search) {
-    myTree.rebuild(text);
-    return myTree.search(search);
+bool TextEditor::find(const string& search, int& ind) {
+    SuffixTree myTree(text);
+    return myTree.search(search, ind);
 }
 
 void TextEditor::undo() {
@@ -142,9 +142,10 @@ void TextEditor::menu(){
                 cin.ignore();
                 getline(cin, search);
                 if(search != "<-Back" && search != "<-back") {
-                    bool found = find(search);
+                    int index = 0;
+                    bool found = find(search, index);
                     if (found) {
-                        cout << "Text found. " << endl;
+                        cout << "Text found at index: " << index << endl;
                     } else {
                         cout << "Text not found." << endl;
                     }

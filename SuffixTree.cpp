@@ -3,35 +3,38 @@
 #include "SuffixTree.h"
 using namespace std;
 
-SuffixTree::SuffixTree():myCapacity(0){
-    myArray = new string[myCapacity];
-    construct("");
+SuffixTree::SuffixTree(string item): myCapacity(0){
+    rebuild(item);
 }
 
-SuffixTree::SuffixTree(string str):myCapacity(str.length()){
+void SuffixTree::rebuild(string item) {
+    if (!empty()) // To Check if it is Called by constructor or by another function
+        this->~SuffixTree();
+    myCapacity = item.length();
+    text = item;
     myArray = new string[myCapacity];
-    construct(str );
-    myCapacity = str.length() ;
+    Indexes = new int[myCapacity];
+    for (int i=0; i<item.length(); i++) {
+        for (int j = i; j < item.length(); ++j) {
+            myArray[i] += item[j];
+        }
+        Indexes[i] = i;
+    }
+    quicksort(myArray, Indexes, 0, item.length()-1);
 }
 
 SuffixTree::SuffixTree(SuffixTree & other):myCapacity(other.myCapacity) {
     myArray=new string [myCapacity];
+    Indexes  =new int [myCapacity];
     for (int i = 0; i < myCapacity; ++i) {
         myArray[i]=other.myArray[i];
+        Indexes[i]=other.Indexes[i];
     }
 }
 
 SuffixTree::~SuffixTree(){
     delete[] myArray;
-}
-
-void SuffixTree::construct(string item){
-    for (int i=0; i<item.length(); i++) {
-        for (int j = i; j < item.length(); ++j) {
-            myArray[i] += item[j];
-        }
-    }
-    quicksort(myArray, 0, item.length()-1);
+    delete[] Indexes;
 }
 
 void swap(string &a, string &b) {
@@ -40,7 +43,13 @@ void swap(string &a, string &b) {
     b = temp;
 }
 
-int partition(string arr[], int low, int high) {
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int partition(string arr[], int indexesArr[], int low, int high) {
     string pivot = arr[low];
     int i = low + 1;
     int j = high;
@@ -55,39 +64,43 @@ int partition(string arr[], int low, int high) {
             break;
         }
         swap(arr[i], arr[j]);
+        swap(indexesArr[i], indexesArr[j]);
     }
     swap(arr[low], arr[j]);
+    swap(indexesArr[low], indexesArr[j]);
     return j;
 }
 
-void SuffixTree::quicksort(string arr[], int low, int high) {
+void SuffixTree::quicksort(string arr[], int indexesArr[], int low, int high) {
     if (low < high) {
-        int pivotIndex = partition(arr, low, high);
-        quicksort(arr, low, pivotIndex - 1);
-        quicksort(arr, pivotIndex + 1, high);
+        int pivotIndex = partition(arr, indexesArr, low, high);
+        quicksort(arr, indexesArr, low, pivotIndex - 1);
+        quicksort(arr, indexesArr, pivotIndex + 1, high);
     }
 }
 
 
 void SuffixTree::display(ostream & out) {
     for (int k = 0; k < myCapacity; ++k) {
-        out << myArray[k];
-        if (k != myCapacity-1) out << ", ";
+        out << "Element: " << myArray[k];
+        out << ", Index: " << Indexes[k] << endl;
     }
     out << endl;
 }
 
-bool SuffixTree::search(const string suffix) const {
+bool SuffixTree::search(const string prefix, int& ind) const {
     bool found=false;
     for (int i = 0; i < myCapacity; ++i) {
         if (found) {
+            ind = Indexes[i-1];
             return found;
         }
         int j = 0;
-        for (char x: suffix) {
+        for (char x: prefix) {
             if (tolower(myArray[i][j]) == tolower(x)) {
                 found = true;
             } else {
+                ind = -1;
                 found = false;
                 break;
             }
@@ -95,12 +108,23 @@ bool SuffixTree::search(const string suffix) const {
         }
     }
     return found;
-//    for (int i = 0; i < myCapacity; ++i) {
-//        if (myArray[i].find(suffix) != string::npos){
-//            return true;
-//        }
-//    }
-//    return false;
+}
+
+void SuffixTree::insert(const string str) {
+    if (str.empty()) return;
+    rebuild(text + str);
+}
+
+void SuffixTree::erase(const string str) {
+    int ind;
+    if (str.empty() || !search(str, ind)) return;
+    string temp = "";
+    for (int i = 0; i < myCapacity; ++i) {
+        if (i < ind || i >= ind + str.length()) {
+            temp += text[i];
+        }
+    }
+    rebuild(temp);
 }
 
 
@@ -115,9 +139,11 @@ SuffixTree SuffixTree::operator=(SuffixTree & other) {
             SuffixTree::~SuffixTree();
             myCapacity=other.myCapacity;
             myArray=new string [myCapacity];
+            Indexes = new int[myCapacity];
         }
         for (int i = 0; i < myCapacity; ++i) {
             myArray[i]=other.myArray[i];
+            Indexes[i]=other.Indexes[i];
         }
     }
     return *this;
@@ -127,10 +153,3 @@ ostream& operator<<(ostream& out, SuffixTree& s){
     s.display(out);
     return out;
 }
-void SuffixTree::rebuild(string str){
-    this->~SuffixTree();
-    myArray = new string[str.length()];
-    construct(str);
-    myCapacity = str.length();
-}
-

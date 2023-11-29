@@ -152,6 +152,30 @@ SuffixTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/SuffixTree.cpp.s
 .PHONY : SuffixTree.cpp.s
 
+TextEditor.obj: TextEditor.cpp.obj
+.PHONY : TextEditor.obj
+
+# target to build an object file
+TextEditor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/TextEditor.cpp.obj
+.PHONY : TextEditor.cpp.obj
+
+TextEditor.i: TextEditor.cpp.i
+.PHONY : TextEditor.i
+
+# target to preprocess a source file
+TextEditor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/TextEditor.cpp.i
+.PHONY : TextEditor.cpp.i
+
+TextEditor.s: TextEditor.cpp.s
+.PHONY : TextEditor.s
+
+# target to generate assembly for a file
+TextEditor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\texteditor1.dir\build.make CMakeFiles/texteditor1.dir/TextEditor.cpp.s
+.PHONY : TextEditor.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -188,6 +212,9 @@ help:
 	@echo ... SuffixTree.obj
 	@echo ... SuffixTree.i
 	@echo ... SuffixTree.s
+	@echo ... TextEditor.obj
+	@echo ... TextEditor.i
+	@echo ... TextEditor.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
