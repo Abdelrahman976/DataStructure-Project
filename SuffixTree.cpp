@@ -36,15 +36,9 @@ SuffixTree::~SuffixTree(){
     delete[] myArray;
     delete[] Indexes;
 }
-
-void swap(string &a, string &b) {
-    string temp = a;
-    a = b;
-    b = temp;
-}
-
-void swap(int &a, int &b) {
-    int temp = a;
+template<typename T>
+void Swap(T &a, T &b) {
+    T temp = a;
     a = b;
     b = temp;
 }
@@ -63,11 +57,11 @@ int partition(string arr[], int indexesArr[], int low, int high) {
         if (i > j) {
             break;
         }
-        swap(arr[i], arr[j]);
-        swap(indexesArr[i], indexesArr[j]);
+        Swap<string>(arr[i], arr[j]);
+        Swap<int>(indexesArr[i], indexesArr[j]);
     }
-    swap(arr[low], arr[j]);
-    swap(indexesArr[low], indexesArr[j]);
+    Swap<string>(arr[low], arr[j]);
+    Swap<int>(indexesArr[low], indexesArr[j]);
     return j;
 }
 

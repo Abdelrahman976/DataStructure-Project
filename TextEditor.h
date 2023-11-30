@@ -18,9 +18,11 @@ private:
     string clipboard;
     string previousText;
     void saveState();
-    void insert(const string& str);
+    void insert(const string& str, const int& pos);
     void deleteSubstring(int start, int length);
+    void viewClipboard();
     bool find(const string& search, int&);
+    bool findR(const string& search, const string& replace);
     void undo();
     void redo();
     void copy(int start, int length);
