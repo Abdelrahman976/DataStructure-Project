@@ -58,6 +58,7 @@ void TextEditor::undo() {
     if(!initialState){
         initialState= true;
         text="";
+        cout << "\n****** Nothing to undo ******\n\n";
         return;
     }
     text = previousText;
@@ -65,14 +66,17 @@ void TextEditor::undo() {
 
 void TextEditor::redo() {
     if (currentText == text) {
-        cout << "Nothing to redo." << endl;
+        cout << "\n****** Nothing to redo ****** \n";
         return;
     }
     text = currentText;
 }
 
 void TextEditor::viewClipboard() {
-    cout << "\n\n*** Clipboard: " << clipboard << " ***\n\n";
+    if (clipboard.empty())
+        cout << "\n****** Clipboard is empty ******\n\n";
+    else
+        cout << "\n*** Clipboard: " << clipboard << " ***\n";
 }
 
 void TextEditor::copy(int start, int length) {
@@ -105,7 +109,7 @@ void TextEditor::saveToFile(const string& filename) {
         outFile.close();
         cout << "Text saved to " << filename << endl;
     } else {
-        cout << "Error: Unable to save the text to " << filename << endl;
+        cout << "\n ****** Error: Unable to save the text to " << filename << " ******\n\n";
     }
 }
 
@@ -117,7 +121,7 @@ void TextEditor::loadFromFile(const string& filename) {
         inFile.close();
         cout << "Text loaded from " << filename << endl;
     } else {
-        cout << "Error: Unable to load text from " << filename << endl;
+        cout << "\n****** Error: Unable to load text from " << filename << " ******\n\n";
     }
 }
 
@@ -134,13 +138,14 @@ void TextEditor::menu(){
         cout << "4. Find & Replace Text\n";
         cout << "5. Undo\n";
         cout << "6. Redo\n";
-        cout << "7. Cut\n";
+        cout << "7. Cut Text\n";
         cout << "8. Copy Text\n";
         cout << "9. Paste Text\n";
-        cout << "10. Display Content\n";
-        cout << "11. Save to File\n";
-        cout << "12. Load from File\n";
-        cout << "13. Exit\n";
+        cout << "10. View Clipboard\n";
+        cout << "11. Display Content\n";
+        cout << "12. Save to File\n";
+        cout << "13. Load from File\n";
+        cout << "14. Exit\n";
 
         cout << "Enter your choice: ";
 
@@ -152,7 +157,7 @@ void TextEditor::menu(){
         switch (choice) {
             case 1: {
                 cout << "Enter text to insert, (<-Back to return to main menu): ";
-                cin.ignore();  // Consume the newline character.
+                cin.ignore();
                 getline(cin, content);
                 if(content != "<-Back" && content != "<-back") {
                     int pos;
@@ -163,25 +168,33 @@ void TextEditor::menu(){
                     else if (pos >= 0)
                         insert(content, pos);
                     else
-                        cerr << "\n\n****** Invalid position ******\n\n";
+                        cout << "\n\n****** Invalid position ******\n\n";
                 }
                 break;
             }
             case 2: {
+                if(text.empty()){
+                    cout << "\n****** Nothing to delete ******\n\n";
+                    break;
+                }
                 string text;
                 cout << "Enter text to delete, (<-Back to return to main menu): ";
-                cin.ignore(); // Consume the newline character.
+                cin.ignore();
                 getline(cin, text, '\n');
                 if(text != "<-Back" && text != "<-back") {
                     if (findR(text, "")){
                         cout << "\n\n*** Text has been deleted successfully ***\n\n";
                     }else{
-                        cerr << "\n\n****** Text not found ******\n\n";
+                        cout << "\n\n****** Text not found ******\n\n";
                     }
                 }
                 break;
             }
             case 3: {
+                if(text.empty()){
+                    cout << "\n****** Nothing to find ******\n\n";
+                    break;
+                }
                 string search;
                 cout << "Enter text to find, (<-Back to return to main menu): ";
                 cin.ignore();
@@ -192,12 +205,16 @@ void TextEditor::menu(){
                     if (found) {
                         cout << "Text found at index: " << index << endl;
                     } else {
-                        cout << "Text not found." << endl;
+                        cout << "\n****** Text not found ******\n\n";
                     }
                 }
                 break;
             }
             case 4: {
+                if(text.empty()){
+                    cout << "\n****** Nothing to find ******\n\n";
+                    break;
+                }
                 string search, replace;
                 cout << "Enter text to find, (<-Back to return to main menu): ";
                 cin.ignore();
@@ -206,9 +223,9 @@ void TextEditor::menu(){
                     cout << "Enter text to replace: ";
                     getline(cin, replace, '\n');
                     if (findR(search, replace)) {
-                        cout << "\n\n*** Text found & replaced successfully ***\n\n";
+                        cout << "\n*** Text found & replaced successfully ***\n";
                     } else {
-                        cout << "Text not found.\n";
+                        cout << "\n****** Text not found ******\n\n";
                     }
                 }
                 break;
@@ -220,33 +237,96 @@ void TextEditor::menu(){
                 redo();
                 break;
             case 7: {
+                if (text.empty()) {
+                    cout << "\n****** Nothing to cut ******\n\n";
+                    break;
+                }
                 int start, length;
-                cout << "Enter start position and length to cut, (-1 to return to main menu): ";
-                cin >> start >> length;
-                if(start != -1)
+                while (true) {
+                    cout << "Enter start position and length to cut, (-1 to return to main menu): ";
+
+                    if (!(cin >> start) || start < -1) {
+                        cout << "\n****** Invalid input for start position. Please enter a valid position ******\n" << endl;
+                        cin.clear();
+                        cin.ignore(INT_MAX, '\n');
+                        continue;
+                    }
+                    if (start == -1)
+                        break;
+                    cin.ignore();
+
+                    cout << "Enter length to cut: ";
+                    if (!(cin >> length) || length < 0) {
+                        cout << "\n ****** Invalid input for length. Please enter a valid length ******\n" << endl;
+                        cin.clear();
+                        cin.ignore(INT_MAX, '\n');
+                        continue;
+                    }
+                    break;
+                }
+                if (start != -1)
                     cut(start, length);
                 break;
             }
+
             case 8: {
+                if (text.empty()) {
+                    cout << "\n****** Nothing to copy ******\n" << endl;
+                    break;
+                }
                 int start, length;
-                cout << "Enter start position and length to copy, (-1 to return to main menu): ";
-                cin >> start >> length;
+                while (true) {
+                    cout << "Enter start position and length to copy, (-1 to return to main menu): ";
+                    if (!(cin >> start) || start < -1) {
+                        cout << "\n****** Invalid input for start position. Please enter a valid position ******\n" << endl;
+                        cin.clear();
+                        cin.ignore(INT_MAX, '\n');
+                        continue;
+                    }
+                    if (start == -1)
+                        break;
+                    cin.ignore();
+
+                    cout << "Enter length to cut: ";
+                    if (!(cin >> length) || length < 0) {
+                        cout << "\n****** Invalid input for length. Please enter a valid length ******\n" << endl;
+                        cin.clear();
+                        cin.ignore(INT_MAX, '\n');
+                        continue;
+                    }
+                    break;
+                }
                 if(start != -1)
                     copy(start, length);
                 break;
             }
             case 9: {
+                if (clipboard.empty()) {
+                    cout << "\n****** Nothing to paste ******\n" << endl;
+                    break;
+                }
                 int position;
-                cout << "Enter position to paste, (-1 to return to main menu): ";
-                cin >> position;
+                while (true) {
+                    cout << "Enter position to paste, (-1 to return to main menu): ";
+                    if (!(cin >> position) || position < -1) {
+                        cout << "\n****** Invalid input for paste position. Please enter a valid position ******\n" << endl;
+                        cin.clear();
+                        cin.ignore(INT_MAX, '\n');
+                        continue;
+                    }
+                    break;
+                }
                 if(position != -1)
                     paste(position);
                 break;
             }
             case 10:
+                viewClipboard();
+                break;
+            case 11:
                 displayContent();
                 break;
-            case 11: {
+            case 12: {
                 string filename;
                 cout << "Enter the filename to save to, (<-Back to return to main menu): ";
                 cin >> filename;
@@ -254,7 +334,7 @@ void TextEditor::menu(){
                     saveToFile(filename);
                 break;
             }
-            case 12: {
+            case 13: {
                 string filename;
                 cout << "Enter the filename to load from, (<-Back to return to main menu): ";
                 cin >> filename;
@@ -262,12 +342,15 @@ void TextEditor::menu(){
                     loadFromFile(filename);
                 break;
             }
-            case 13:
-                cout << "Exiting the text editor." << endl;
+            case 14:{
+                cout << "==========Exiting the text editor==========" << endl;
                 exit(1);
-
-            default:
-                cout << "Invalid choice. Please try again." << endl;
+            }
+            default:{
+                cout << "\n****** Invalid choice. Please enter a number from 1 to 13 ******\n\n";
+                cin.clear();
+                cin.ignore(INT_MAX, '\n');
+            }
         }
     }
 }
