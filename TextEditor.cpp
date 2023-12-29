@@ -287,7 +287,7 @@ void TextEditor::menu(){
                         break;
                     cin.ignore();
 
-                    cout << "Enter length to cut: ";
+                    cout << "Enter length to copy: ";
                     if (!(cin >> length) || length < 0) {
                         cout << "\n****** Invalid input for length. Please enter a valid length ******\n" << endl;
                         cin.clear();
