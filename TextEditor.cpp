@@ -66,7 +66,7 @@ void TextEditor::undo() {
 
 void TextEditor::redo() {
     if (currentText == text) {
-        cout << "\n****** Nothing to redo ****** \n";
+        cout << "\n****** Nothing to redo ****** \n\n";
         return;
     }
     text = currentText;
@@ -76,7 +76,7 @@ void TextEditor::viewClipboard() {
     if (clipboard.empty())
         cout << "\n****** Clipboard is empty ******\n\n";
     else
-        cout << "\n*** Clipboard: " << clipboard << " ***\n";
+        cout << "\n*** Clipboard: " << clipboard << " ***\n\n";
 }
 
 void TextEditor::copy(int start, int length) {
@@ -131,6 +131,7 @@ void TextEditor::saveState() {
 
 void TextEditor::menu(){
     while (true) {
+        cout << "================== Welcome To The Text Editor ==================" << endl;
         cout << "Text Editor Menu:\n";
         cout << "1. Insert Text\n";
         cout << "2. Delete Text\n";
@@ -146,9 +147,8 @@ void TextEditor::menu(){
         cout << "12. Save to File\n";
         cout << "13. Load from File\n";
         cout << "14. Exit\n";
-
+        cout << "================================================================\n";
         cout << "Enter your choice: ";
-
         string content;
 
         int choice;
@@ -161,14 +161,22 @@ void TextEditor::menu(){
                 getline(cin, content);
                 if(content != "<-Back" && content != "<-back") {
                     int pos;
-                    cout << "Enter Position (-1: Default insert at End): ";
-                    cin >> pos;
+                    while (true) {
+                        cout << "Enter Position (-1: Default insert at End): ";
+                        if (!(cin >> pos) || pos < -1) {
+                            cout << "\n****** Invalid input for insert position. Please enter a valid position ******\n" << endl;
+                            cin.clear();
+                            cin.ignore(INT_MAX, '\n');
+                            continue;
+                        }
+                        break;
+                    }
                     if (pos == -1)
                         insert(content);
                     else if (pos >= 0)
                         insert(content, pos);
                     else
-                        cout << "\n\n****** Invalid position ******\n\n";
+                        cout << "\n****** Invalid position ******\n\n";
                 }
                 break;
             }
@@ -183,9 +191,9 @@ void TextEditor::menu(){
                 getline(cin, text, '\n');
                 if(text != "<-Back" && text != "<-back") {
                     if (findR(text, "")){
-                        cout << "\n\n*** Text has been deleted successfully ***\n\n";
+                        cout << "\n*** Text has been deleted successfully ***\n\n";
                     }else{
-                        cout << "\n\n****** Text not found ******\n\n";
+                        cout << "\n****** Text not found ******\n\n";
                     }
                 }
                 break;
@@ -223,7 +231,7 @@ void TextEditor::menu(){
                     cout << "Enter text to replace: ";
                     getline(cin, replace, '\n');
                     if (findR(search, replace)) {
-                        cout << "\n*** Text found & replaced successfully ***\n";
+                        cout << "\n*** Text found & replaced successfully ***\n\n";
                     } else {
                         cout << "\n****** Text not found ******\n\n";
                     }
@@ -343,7 +351,7 @@ void TextEditor::menu(){
                 break;
             }
             case 14:{
-                cout << "==========Exiting the text editor==========" << endl;
+                cout << "===============Exiting the text editor===============" << endl;
                 exit(1);
             }
             default:{
