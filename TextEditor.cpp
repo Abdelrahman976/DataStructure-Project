@@ -9,6 +9,8 @@ using namespace std;
 TextEditor::TextEditor() {
     text = "";
     currentText = "";
+    initialState = false;
+    clipboard = "";
 }
 
 void TextEditor::insert(const string& str, const int& pos = -1) {
@@ -91,12 +93,13 @@ void TextEditor::paste(int position) {
     cout << "\n\n*** Item Pasted Successfully ***\n\n";
 }
 void TextEditor::cut(int start, int length) {
+    saveState();
     clipboard = text.substr(start, length);
     deleteSubstring(start, length);
     viewClipboard();
 }
 void TextEditor::displayContent() {
-    cout << "Text Editor Content:\n";
+    cout << "\nText Editor Content:\n";
     cout << "=======================================================================================================================\n";
     cout << text << endl;
     cout << "=======================================================================================================================\n";
@@ -116,6 +119,10 @@ void TextEditor::saveToFile(const string& filename) {
 void TextEditor::loadFromFile(const string& filename) {
     ifstream inFile(filename);
     if (inFile.is_open()) {
+        if(!initialState) {
+            initialState = true;
+        }
+        saveState();
         getline(inFile, text, '\0');
         currentText = text;
         inFile.close();
@@ -130,8 +137,15 @@ void TextEditor::saveState() {
 }
 
 void TextEditor::menu(){
+    bool first = true;
     while (true) {
-        cout << "================== Welcome To The Text Editor ==================" << endl;
+        if (first) {
+            cout << "\n================== Welcome To The Text Editor ==================" << endl;
+            first = false;
+        }
+        else{
+            cout << "\n================================================================" << endl;
+        }
         cout << "Text Editor Menu:\n";
         cout << "1. Insert Text\n";
         cout << "2. Delete Text\n";
@@ -147,7 +161,7 @@ void TextEditor::menu(){
         cout << "12. Save to File\n";
         cout << "13. Load from File\n";
         cout << "14. Exit\n";
-        cout << "================================================================\n";
+        cout << "================================================================\n\n";
         cout << "Enter your choice: ";
         string content;
 
@@ -351,7 +365,7 @@ void TextEditor::menu(){
                 break;
             }
             case 14:{
-                cout << "===============Exiting the text editor===============" << endl;
+                cout << "\n\n===============Exiting the text editor===============" << endl;
                 exit(1);
             }
             default:{

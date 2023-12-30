@@ -12,7 +12,7 @@ public:
     TextEditor();
     void menu();
 private:
-    bool initialState{false};
+    bool initialState;
     string text;
     string currentText;
     string clipboard;
